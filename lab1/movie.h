@@ -10,7 +10,7 @@ I have done all the coding by myself and only copied the code that my professor 
 
 #ifndef SENECA_MOVIE_H_
 #define SENECA_MOVIE_H_
-#endif // !SENECA_MOVIE_H_
+
 
 
 namespace seneca {
@@ -28,3 +28,4 @@ namespace seneca {
 	void displayMovie(const Movie* mvp);
 	void displayMoviesWithGenre(const char genre[]);
 }
+#endif // !SENECA_MOVIE_H_

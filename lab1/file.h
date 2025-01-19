@@ -10,7 +10,7 @@ I have done all the coding by myself and only copied the code that my professor 
 
 #ifndef SENECA_FILE_H_
 #define SENECA_FILE_H_
-#endif // !SENECA_FILE_H_
+
 namespace seneca {
 	bool openFile(const char filename[]);
 	void closeFile();
@@ -22,3 +22,4 @@ namespace seneca {
 	bool readConsumerRating(float* rating);
 
 }
+#endif // !SENECA_FILE_H_
