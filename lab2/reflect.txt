@@ -1,5 +1,0 @@
-this workshop was very challenging for me, specially the third part about struct(compound type), it was the first time i seen something like this:
-*Contact getcontact()  it was so confusing for me, and still it is after many hours to practice, but im better now !!
-i did the workshop about 3 times, and made some easy practice finctions(asked to chatgpt to create them) to practice the dynamic memory concept.
-Im about 75% ok with working DMA now, its not that hard !. 
-function overloading was a sweat and easy concept for me, its cool, having the same name functions but doing different things !, and i understood its a polymorphism thing in OOP !.
