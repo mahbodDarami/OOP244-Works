@@ -1,0 +1,2 @@
+at first it was a hard workshop for me, the type operators was very challenging for me and still it is... the last questions which was helper function and += operators was easier for me.. so i have to do some more practice on type conversion operators.
+it took me an hour to figure out what is exactly the bool() operator, it seems very easy but understanding it was hard for me.
