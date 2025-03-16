@@ -21,10 +21,9 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{1493eb0a-0f45-4b28-bd36-cea57906b64d}</ProjectGuid>
-    <RootNamespace>prj</RootNamespace>
+    <ProjectGuid>{fb2abc26-aa7c-4698-8719-c845bc7006c1}</ProjectGuid>
+    <RootNamespace>Project1</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
-    <ProjectName>ms2</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -128,20 +127,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Menu.h" />
-    <ClInclude Include="constants.h" />
-    <ClInclude Include="Utils.h" />
+    <ClInclude Include="..\constants.h" />
+    <ClInclude Include="..\Menu.h" />
+    <ClInclude Include="..\Utils.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Menu.cpp" />
-    <ClCompile Include="ms2.cpp" />
-    <ClCompile Include="Utils.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="..\README.md" />
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="correct_output.txt" />
+    <ClCompile Include="..\Menu.cpp" />
+    <ClCompile Include="..\ms2.cpp" />
+    <ClCompile Include="..\Utils.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

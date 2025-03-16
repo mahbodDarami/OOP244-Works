@@ -2,7 +2,7 @@
 // OOP244 Project, milestone 2 : tester program
 //
 // File	ms2.cpp
-// Version 1.1
+// Version 2.1
 // Author Fardad
 // Description
 //
