@@ -19,6 +19,7 @@
 #include "Menu.h"
 #include "Utils.h"
 #include <cstring>
+#include "constants.h"
 
 namespace seneca {
     extern Utils ut;
