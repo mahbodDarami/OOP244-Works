@@ -26,10 +26,10 @@
 
 namespace seneca {
 	class Billable {
-		char* m_name;
-		double m_price;
+		char* m_name = nullptr;
+		double m_price = 0.0;
 	protected:
-		void price(double value);
+		void setPrice(double value);
 		void name(const char* name);
 	public:
 		Billable();

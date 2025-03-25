@@ -1,10 +1,10 @@
 /***********************************************************************
-// OOP244 Project, milestone 2: tester program
+// OOP244 Project, milestone 3:
 //
-// File	Menu.cpp
-// Version 2.0
+// File	Billable.h
+// Version 1.0
 // Student Name and ID: Mahbod Darami - 117135244
-// Date 2025-03-15
+// Date 2025-03-24
 // Author Fardad
 // Description
 // I have done all the coding by myself and only copied the code
@@ -15,41 +15,41 @@
 // Name            Date            Reason
 //
 ***********************************************************************/
-#include <iostream>
 #include "Billable.h"
-namespace seneca {
-	Billable::Billable() {};
+#include "Utils.h"
 
-	
-	Billable::Billable(const Billable& other) {
-		ut.alocpy(m_name, other.m_name);
-	}
-	Billable& Billable::operator=(const Billable& other) {
-		if (this != &other) {
-			ut.alocpy(m_name, other.m_name);  
-			m_price = other.m_price;
-		}
-		return *this;
-	}
-	void Billable::price(double value) {
-		this->m_price = value;
-	}
-	void Billable::name(const char* name) {
-		ut.alocpy(m_name, name);
-		}
-	 Billable::~Billable() {
-		delete[] m_name;
-	}
-	 double Billable::price()const {
-		 return m_price;
-	 }
-	 Billable::operator const char* ()const {
-		 return m_name;
-	 }
-	 double operator+(double money, const Billable& B) {
-		 return money + B.price();
-	 }
-	 double& operator+=(double& money, const Billable& B) {
-		 return money += B.price();
-	 }
+namespace seneca {
+    Billable::Billable() : m_name(nullptr), m_price(0.0) {}
+    Billable::Billable(const Billable& other) : m_name(nullptr), m_price(0.0) {
+        ut.alocpy(m_name, other.m_name);
+        m_price = other.m_price;
+    }
+    Billable& Billable::operator=(const Billable& other) {
+        if (this != &other) {
+            ut.alocpy(m_name, other.m_name);
+            m_price = other.m_price;
+        }
+        return *this;
+    }
+    Billable::~Billable() {
+        delete[] m_name;
+    }
+    void Billable::setPrice(double value) {
+        m_price = value;
+    }
+    void Billable::name(const char* name) {
+        ut.alocpy(m_name, name);
+    }
+    double Billable::price() const {
+        return m_price;
+    }
+    Billable::operator const char* () const {
+        return m_name;
+    }
+    double operator+(double money, const Billable& B) {
+        return money + B.price();
+    }
+    double& operator+=(double& money, const Billable& B) {
+        return money += B.price();
+    }
 }

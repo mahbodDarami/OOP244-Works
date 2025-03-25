@@ -1,17 +1,14 @@
 /***********************************************************************
-// OOP244 Project, milestone 2: tester program
+// OOP244 Project, milestone 3:
 //
-// File	Menu.h
-// Version 2.0
+// File	Billable.h
+// Version 1.0
 // Student Name and ID: Mahbod Darami - 117135244
-// Date 2025-03-15
+// Date 2025-03-24
 // Author Fardad
 // Description
 // I have done all the coding by myself and only copied the code
 // that my professor provided to complete my workshops and assignments.
-i got help from chatgpt for this : private:
-        MenuItem(const MenuItem& other);
-        MenuItem& operator=(const MenuItem& other);
 //
 // Revision History
 // -----------------------------------------------------------
@@ -27,7 +24,7 @@ i got help from chatgpt for this : private:
 
 
 namespace seneca {
-    class Menu; // Forward declaration
+    class Menu; 
 
     class MenuItem {
         char* menu_content;
