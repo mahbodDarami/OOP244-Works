@@ -1,0 +1,2 @@
+mahbid darami - 117135244
+this week workshop was easier for me compare to previous weeks, inheritant is a understanble object compare to function overloads, i think im good at it, my only problem is dealing with output specifications like cout.fill and left right and so on.
