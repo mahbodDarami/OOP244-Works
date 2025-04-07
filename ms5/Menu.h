@@ -27,9 +27,10 @@ namespace seneca {
         ~MenuItem();
         operator bool() const;
         std::ostream& display(std::ostream& ostr = std::cout) const;
-
+        std::ostream& display(std::ostream& ostr, int temp) const;
         friend class Menu;
         friend std::ostream& operator<<(std::ostream& os, const MenuItem& item);
+        bool isEmpty() const;
     };
 
     class Menu {
@@ -51,6 +52,7 @@ namespace seneca {
         Menu& operator<<(const char* content);
         size_t select() const;
         friend size_t operator<<(std::ostream& ostr, const Menu& m);
+        
     };
 
     std::ostream& operator<<(std::ostream& os, const MenuItem& item);

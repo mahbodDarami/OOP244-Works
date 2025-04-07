@@ -4,11 +4,13 @@
 // Description
 // I have done all the coding by myself and only copied the code
 // that my professor provided to complete my workshops and assignments.
+// i got help for select() function from A.I
 
 #include "Menu.h"
 #include "Utils.h"
 #include <cstring>
 #include "constants.h"
+#include <string> 
 
 namespace seneca {
     extern Utils ut;
@@ -47,19 +49,37 @@ namespace seneca {
     }
 
     std::ostream& MenuItem::display(std::ostream& ostr) const {
+        for (size_t i = 0; i < menu_indent * menu_indentSize; ++i) {
+            ostr << ' ';
+        }
         if (menu_row >= 0) {
-            for (size_t i = 0; i < menu_indent * menu_indentSize; ++i) {
-                ostr << ' ';
-            }
             ostr.width(2);
             ostr << menu_row << "- ";
         }
-        if (menu_content) {
-            const char* content = menu_content;
-            ostr << content;
+        ostr << menu_content;
+        return ostr;
+    }
+    std::ostream& MenuItem::display(std::ostream& ostr, int temp) const {
+        if (isEmpty()) {
+            ostr << "??????????";
+        }
+        else {
+            for (unsigned int i = 0; i < menu_indent; i++) {
+                for (unsigned int j = 0; j < menu_indentSize; j++) {
+                    ostr << " ";
+                }
+            }
+            ostr << menu_content;
         }
         return ostr;
     }
+
+    bool MenuItem::isEmpty() const
+    {
+       return menu_content == nullptr;
+    }
+
+   
 
     std::ostream& operator<<(std::ostream& os, const MenuItem& item) {
         return item.display(os);
@@ -94,47 +114,24 @@ namespace seneca {
         return *this;
     }
 
-    size_t Menu::select() const {
-        size_t selection = 0;
-
-        if (menu_title && menu_title.menu_content && menu_title.menu_content[0] != '\0') {
+    size_t Menu::select() const
+    {
+        int select = 100;
+        if (!menu_title.isEmpty()) {
             std::cout << menu_title << std::endl;
+
         }
-
-
-        for (size_t i = 0; i < menu_itemCount; i++) {
+        for (unsigned int i = 0; i < menu_itemCount; i++) {
             std::cout << *menu_items[i] << std::endl;
+
         }
+        std::cout << menu_exit << std::endl;
+        std::cout << menu_prompt;
 
-        if (menu_exit) {
-            std::cout << menu_exit << std::endl;
-        }
+        select = ut.getInt(0, menu_itemCount);
 
-        if (menu_prompt) {
-            std::cout << menu_prompt;
-        }
+        return static_cast<size_t>(select);
 
-        int input;
-        bool valid = false;
-        do {
-            std::cin >> input;
-            if (std::cin.fail()) {
-                std::cin.clear();
-                std::cin.ignore(1000, '\n');
-                std::cout << "Invalid integer, try again: ";
-            }
-            else if (input < 0 || input > int(menu_itemCount)) {
-                std::cout << "Invalid value: [0 <= value <= " << menu_itemCount << "], try again: ";
-                std::cin.ignore(1000, '\n');
-            }
-            else {
-                valid = true;
-                std::cin.ignore(1000, '\n');
-            }
-        } while (!valid);
-
-        selection = input;
-        return selection;
     }
 
 
